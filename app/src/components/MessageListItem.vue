@@ -5,13 +5,20 @@
     :detail="false"
     class="list-item"
   >
-    <div slot="start" :class="!message.read ? 'dot dot-unread' : 'dot'"></div>
+    <div
+      slot="start"
+      :class="!message.read ? 'dot dot-unread' : 'dot'"
+    />
     <ion-label class="ion-text-wrap">
       <h2>
         {{ message.fromName }}
         <span class="date">
           <ion-note>{{ message.date }}</ion-note>
-          <ion-icon v-if="isIos()" :icon="chevronForward" size="small"></ion-icon>
+          <ion-icon
+            v-if="isIos()"
+            :icon="chevronForward"
+            size="small"
+          />
         </span>
       </h2>
       <h3>{{ message.subject }}</h3>

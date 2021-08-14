@@ -3,14 +3,23 @@
     <ion-header :translucent="true">
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-back-button :text="getBackButtonText()" default-href="/"></ion-back-button>
+          <ion-back-button
+            :text="getBackButtonText()"
+            default-href="/"
+          />
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content v-if="message" :fullscreen="true">
+    <ion-content
+      v-if="message"
+      :fullscreen="true"
+    >
       <ion-item>
-        <ion-icon :icon="personCircle" color="primary"></ion-icon>
+        <ion-icon
+          :icon="personCircle"
+          color="primary"
+        />
         <ion-label class="ion-text-wrap">
           <h2>
             {{ message.fromName }}
