@@ -3,7 +3,8 @@
 	clean \
 	format \
 	install \
-	lint \
+	lint_check \
+	lint_format \
 	mutants \
 	serve \
 	tests
@@ -22,8 +23,11 @@ format:
 install:
 	yarn install
 
-lint:
-	yarn lint
+lint_check:
+	yarn lint:check
+
+lint_fix:
+	yarn lint:fix
 
 mutants:
 	yarn stryker:mutants
