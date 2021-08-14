@@ -26,6 +26,7 @@ lint:
 	yarn lint
 
 mutants:
+	yarn stryker:mutants
 
 serve:
 	yarn serve
