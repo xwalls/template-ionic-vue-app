@@ -10,8 +10,11 @@ on:
       - main
 
 jobs:
-  actions:
+  checks:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
     steps:
     - name: Prepara repositorio
       uses: actions/checkout@v2
