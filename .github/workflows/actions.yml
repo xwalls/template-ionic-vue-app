@@ -1,0 +1,30 @@
+name: Tests
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+  actions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Prepara repositorio
+      uses: actions/checkout@v2
+      uses: actions/setup-node@master
+    - name: Instala dependencias
+      run: make install
+    - name: Verifica el formato
+      run: make check
+    - name: Analisa el codigo estatico
+      run: make lint_check
+    - name: Corre pruebas unitarias
+      run: make tests_unit
+    - name: Corre pruebas e2e
+      run: make tests_2e2
+    - name: Evalúa resistencia a mutaciones
+      run: make mutants
