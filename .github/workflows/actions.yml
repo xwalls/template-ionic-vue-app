@@ -15,6 +15,7 @@ jobs:
     steps:
     - name: Prepara repositorio
       uses: actions/checkout@v2
+    - name: Prepara Node.js
       uses: actions/setup-node@master
     - name: Instala dependencias
       run: make install
