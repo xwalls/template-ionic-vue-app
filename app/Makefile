@@ -4,10 +4,11 @@
 	format \
 	install \
 	lint_check \
-	lint_format \
+	lint_fix \
 	mutants \
 	serve \
-	tests
+	test_e2e \
+	test_unit
 
 check:
 	yarn prettier:check
@@ -35,11 +36,8 @@ mutants:
 serve:
 	yarn serve
 
-tests: install
-	yarn tests
+test_e2e:
+	yarn test:e2e
 
 test_unit:
 	yarn test:unit
-
-test_e2e:
-	yarn test:e2e
