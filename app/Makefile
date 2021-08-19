@@ -11,7 +11,7 @@
 	test_unit
 
 check:
-	yarn prettier:check
+	yarn lint:check
 
 clean:
 	rm --force --recursive .stryker-tmp
@@ -19,16 +19,10 @@ clean:
 	rm --force *-lock.json
 
 format:
-	yarn prettier:format
+	yarn lint:fix
 
 install:
 	yarn install
-
-lint_check:
-	yarn lint:check
-
-lint_fix:
-	yarn lint:fix
 
 mutants:
 	yarn stryker:mutants
