@@ -1,0 +1,30 @@
+name: Tests
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
+    steps:
+    - name: Prepara repositorio
+      uses: actions/checkout@v2
+    - name: Prepara Node.js
+      uses: actions/setup-node@master
+    - name: Instala dependencias
+      run: make install
+    - name: Verifica el codigo estatico
+      run: make check
+    - name: Corre pruebas unitarias
+      run: make test_unit
+    - name: Evalúa resistencia a mutaciones
+      run: make mutants
