@@ -22,10 +22,8 @@ jobs:
       uses: actions/setup-node@master
     - name: Instala dependencias
       run: make install
-    - name: Verifica el formato
+    - name: Verifica el codigo estatico
       run: make check
-    - name: Analisa el codigo estatico
-      run: make lint_check
     - name: Corre pruebas unitarias
       run: make tests_unit
     - name: Corre pruebas e2e
