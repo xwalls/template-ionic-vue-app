@@ -16,6 +16,7 @@ check:
 clean:
 	rm --force --recursive .stryker-tmp
 	rm --force --recursive node_modules
+	rm --force --recursive reports
 	rm --force *-lock.json
 
 format:
