@@ -25,8 +25,8 @@ jobs:
     - name: Verifica el codigo estatico
       run: make check
     - name: Corre pruebas unitarias
-      run: make tests_unit
+      run: make test_unit
     - name: Corre pruebas e2e
-      run: make tests_2e2
+      run: make test_2e2
     - name: Evalúa resistencia a mutaciones
       run: make mutants
