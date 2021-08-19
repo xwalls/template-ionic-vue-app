@@ -26,7 +26,5 @@ jobs:
       run: make check
     - name: Corre pruebas unitarias
       run: make test_unit
-    - name: Corre pruebas e2e
-      run: make test_e2e
     - name: Evalúa resistencia a mutaciones
       run: make mutants
